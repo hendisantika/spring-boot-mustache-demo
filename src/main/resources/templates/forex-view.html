@@ -1,0 +1,54 @@
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, td, th {
+            border: 1px solid #999;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>Currency Rates</h2>
+<table>
+    <thead>
+    <tr>
+        <th>
+            <lablel>Currency Pair</lablel>
+        </th>
+        <th>
+            <lablel>Bid Price</lablel>
+        </th>
+        <th>
+            <lablel>Ask Price</lablel>
+        </th>
+        <th>
+            <lablel>Date</lablel>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#todayCurrencyRates}}
+    <tr>
+        <td>
+            {{currencyPair}}
+        </td>
+        <td>
+            {{askPrice}}
+        </td>
+        <td>
+            {{bidPrice}}
+        </td>
+        <td>
+            {{dateTime}}
+        </td>
+    </tr>
+    {{/todayCurrencyRates}}
+    </tbody>
+</table>
+</body>
+</html>
