@@ -25,7 +25,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class MyController {
-    @GetMapping
+    @GetMapping("forex")
     public String handleRequest(Model model) {
         model.addAttribute("todayCurrencyRates", getTodayForexRates());
         return "forex-view";
@@ -37,8 +37,8 @@ public class MyController {
         LocalDateTime today = LocalDateTime.now();
         List<Currency> currencies = new ArrayList<>(Currency.getAvailableCurrencies());
 
-//        for (int i = 0; i < currencies.size(); i += 2) {
-        for (int i = 1; i <= currencies.size(); i++) {
+        for (int i = 0; i < currencies.size(); i += 2) {
+//        for (int i = 1; i <= currencies.size(); i++) {
             String currencyPair = currencies.get(i) + "/" + currencies.get(i + 1);
             CurrencyRate cr = new CurrencyRate();
             cr.setCurrencyPair(currencyPair);
